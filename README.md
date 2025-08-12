@@ -170,117 +170,107 @@ chmod +x .husky/pre-commit .husky/commit-msg
 - 11 commit types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
 - 13 commit scopes: setup, config, deps, feature, bug, docs, style, refactor, test, build, ci, release, other
 
-**Installation**:
+## Installation
+
+Simply install the dependencies:
 
 ```bash
-pnpm add -D @commitlint/cli @commitlint/config-conventional @commitlint/types conventional-changelog-atom
+pnpm install
 ```
 
-### 3. Lint-Staged - Staged Files Only
+## Adding shadcn/ui Components
 
-**File**: `.lintstagedrc.json`
-
-**Configuration**:
-
-```json
-{
-  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "eslint"],
-  "*.{json,md,yml}": ["prettier --write"]
-}
-```
-
-**Installation**:
+To add more components from shadcn/ui:
 
 ```bash
-pnpm add -D lint-staged
+pnpm dlx shadcn@latest add [component-name]
 ```
 
-### 4. ESLint - Code Linting
-
-**File**: `eslint.config.mjs`
-
-**Features**:
-
-- Next.js ESLint configuration
-- TypeScript support
-- Prettier integration
-
-**Installation**:
+**Examples:**
 
 ```bash
-pnpm add -D eslint eslint-config-next @eslint/eslintrc
+pnpm dlx shadcn@latest add input
+pnpm dlx shadcn@latest add dialog
+pnpm dlx shadcn@latest add table
 ```
 
-### 5. Prettier - Code Formatting
+## Commit Instructions
 
-**Files**: `.prettierrc`, `.prettierignore`
+This project uses conventional commits. You have two ways to commit:
 
-**Configuration**:
+### Option 1: Interactive Commit (Recommended)
 
-```json
-{
-  "semi": false,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
-```
-
-**Installation**:
+Use the interactive commit script for easy conventional commit creation:
 
 ```bash
-pnpm add -D prettier prettier-plugin-tailwindcss eslint-config-prettier
+pnpm commit
 ```
 
-### 6. Tailwind CSS - Styling
+This will guide you through:
 
-**File**: `tailwind.config.js`
+1. Selecting commit type (feat, fix, docs, etc.)
+2. Choosing commit scope (setup, config, feature, etc.)
+3. Writing commit description
+4. Adding optional commit body and footer
 
-**Features**:
+### Option 2: Manual Commit
 
-- Custom color palette with CSS variables
-- shadcn/ui component support
-- Animation utilities
-- Custom font families (Geist Sans, Geist Mono)
-
-**Installation**:
+Follow this format manually:
 
 ```bash
-pnpm add -D tailwindcss tailwindcss-animate autoprefixer postcss
+git commit -m "type(scope): description"
 ```
 
-### 7. shadcn/ui - Component Library
+**Available Types:**
 
-**File**: `components.json`
+- `feat`: ✨ New feature
+- `fix`: 🐛 Bug fix
+- `docs`: 📚 Documentation changes
+- `style`: 💄 Code style changes (formatting, etc.)
+- `refactor`: ♻️ Code refactoring
+- `perf`: ⚡ Performance improvements
+- `test`: 🧪 Adding or updating tests
+- `build`: 🔨 Build system or dependency changes
+- `ci`: 👷 CI/CD configuration changes
+- `chore`: 🔧 Other changes (maintenance)
+- `revert`: ⏪ Revert previous commit
 
-**Features**:
+**Available Scopes:**
 
-- Radix UI primitives
-- Tailwind CSS styling
-- Accessible components
-- Theme support
+- `setup`, `config`, `deps`, `feature`, `bug`, `docs`, `style`, `refactor`, `test`, `build`, `ci`, `release`, `other`
 
-**Installation**:
+**Examples:**
 
 ```bash
-npx shadcn@latest init
-npx shadcn@latest add button card dropdown-menu
+git commit -m "feat(auth): add login functionality"
+git commit -m "fix(nav): resolve mobile menu issue"
+git commit -m "docs(readme): update installation guide"
 ```
 
-### 8. Next Themes - Dark Mode
+## Commit and Push to Repository
 
-**Features**:
-
-- System theme detection
-- Light/dark mode toggle
-- Theme persistence
-
-**Installation**:
+After making your changes, commit and push to the repository:
 
 ```bash
-pnpm add next-themes
+# Stage all changes
+git add .
+
+# Commit with conventional format
+git commit -m "type(scope): description"
+
+# Push to remote repository
+git push origin main
 ```
+
+**Quick Example:**
+
+```bash
+git add .
+git commit -m "fix(readme): update commit instructions"
+git push origin main
+```
+
+**Note:** Replace `main` with your branch name if you're working on a different branch.
 
 ## 🎯 What's Included
 
