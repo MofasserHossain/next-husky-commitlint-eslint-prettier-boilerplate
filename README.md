@@ -1,32 +1,41 @@
-# Bright Soft Ltd
+# Next.js Boilerplate Template
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) for Bright Soft Ltd.
+A modern, production-ready Next.js boilerplate with a complete development workflow setup including Husky, Commitlint, ESLint, Prettier, and shadcn/ui components.
 
-## Getting Started
+## ✨ Features
 
-First, run the development server:
+- **🚀 Next.js 15** with App Router and Turbopack
+- **🔧 Development Workflow** with Husky, Commitlint, and Lint-staged
+- **📝 Code Quality** with ESLint and Prettier
+- **🎨 UI Components** with shadcn/ui and Tailwind CSS
+- **🌙 Theme Support** with next-themes
+- **📱 Responsive Design** with mobile-first approach
+- **⚡ Performance** optimized with modern tooling
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js >= 20.11.1
+- pnpm >= 9.15.0
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate
+cd next-husky-commitlint-eslint-prettier-boilerplate
+
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## About Bright Soft Ltd
-
-Bright Soft Ltd is a software development company focused on creating innovative web applications and digital solutions.
-
-## Development Workflow
+## 🛠️ Development Workflow
 
 This project uses a streamlined development workflow with automated tools:
 
@@ -37,9 +46,6 @@ Use the interactive commit command to easily create conventional commit messages
 ```bash
 # Full command
 pnpm run commit
-
-# Short alias
-pnpm run c
 ```
 
 The interactive commit tool will:
@@ -64,17 +70,265 @@ The interactive commit tool will:
 - **Commit-msg**: Validates commit messages follow conventional commit format
 - **Code Quality**: ESLint and Prettier ensure consistent code style
 
-## Learn More
+## ⚙️ Configuration Files
 
-To learn more about Next.js, take a look at the following resources:
+### Package Manager
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **pnpm** is the primary package manager
+- Lock file: `pnpm-lock.yaml`
+- Engine requirements specified in `package.json`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Scripts
 
-## Deploy on Vercel
+```json
+{
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "lint:fix": "next lint --fix",
+  "lint:staged": "lint-staged",
+  "format": "prettier . --write",
+  "format:check": "prettier . --check",
+  "commit": "node scripts/commit.mjs",
+  "prepare": "husky"
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Tool Configurations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Husky - Git Hooks
+
+**Files**: `.husky/pre-commit`, `.husky/commit-msg`
+
+**Pre-commit Hook**:
+
+```bash
+pnpm run lint:staged --concurrent false
+```
+
+**Commit-msg Hook**:
+
+```bash
+npx --no -- commitlint --edit $1
+```
+
+**Setup**:
+
+```bash
+npx husky init
+chmod +x .husky/pre-commit .husky/commit-msg
+```
+
+### 2. Commitlint - Conventional Commits
+
+**File**: `commitlint.config.ts`
+
+**Features**:
+
+- Enforces conventional commit format
+- 11 commit types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+- 13 commit scopes: setup, config, deps, feature, bug, docs, style, refactor, test, build, ci, release, other
+
+**Installation**:
+
+```bash
+pnpm add -D @commitlint/cli @commitlint/config-conventional @commitlint/types conventional-changelog-atom
+```
+
+### 3. Lint-Staged - Staged Files Only
+
+**File**: `.lintstagedrc.json`
+
+**Configuration**:
+
+```json
+{
+  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "eslint"],
+  "*.{json,md,yml}": ["prettier --write"]
+}
+```
+
+**Installation**:
+
+```bash
+pnpm add -D lint-staged
+```
+
+### 4. ESLint - Code Linting
+
+**File**: `eslint.config.mjs`
+
+**Features**:
+
+- Next.js ESLint configuration
+- TypeScript support
+- Prettier integration
+
+**Installation**:
+
+```bash
+pnpm add -D eslint eslint-config-next @eslint/eslintrc
+```
+
+### 5. Prettier - Code Formatting
+
+**Files**: `.prettierrc`, `.prettierignore`
+
+**Configuration**:
+
+```json
+{
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+```
+
+**Installation**:
+
+```bash
+pnpm add -D prettier prettier-plugin-tailwindcss eslint-config-prettier
+```
+
+### 6. Tailwind CSS - Styling
+
+**File**: `tailwind.config.js`
+
+**Features**:
+
+- Custom color palette with CSS variables
+- shadcn/ui component support
+- Animation utilities
+- Custom font families (Geist Sans, Geist Mono)
+
+**Installation**:
+
+```bash
+pnpm add -D tailwindcss tailwindcss-animate autoprefixer postcss
+```
+
+### 7. shadcn/ui - Component Library
+
+**File**: `components.json`
+
+**Features**:
+
+- Radix UI primitives
+- Tailwind CSS styling
+- Accessible components
+- Theme support
+
+**Installation**:
+
+```bash
+npx shadcn@latest init
+npx shadcn@latest add button card dropdown-menu
+```
+
+### 8. Next Themes - Dark Mode
+
+**Features**:
+
+- System theme detection
+- Light/dark mode toggle
+- Theme persistence
+
+**Installation**:
+
+```bash
+pnpm add next-themes
+```
+
+## 📁 Project Structure
+
+```
+next-husky-commitlint-eslint-prettier-boilerplate/
+├── .husky/                 # Git hooks
+├── .next/                  # Next.js build output
+├── public/                 # Static assets
+├── scripts/                # Build and utility scripts
+├── src/
+│   ├── app/               # App Router pages
+│   ├── components/        # React components
+│   │   ├── ui/           # shadcn/ui components
+│   │   ├── theme/        # Theme components
+│   │   └── layout/       # Layout components
+│   ├── hooks/            # Custom React hooks
+│   ├── lib/              # Utility functions
+│   └── styles/           # Global styles
+├── .eslintrc.js          # ESLint configuration
+├── .prettierrc           # Prettier configuration
+├── .lintstagedrc.json    # Lint-staged configuration
+├── commitlint.config.ts  # Commitlint configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+├── tsconfig.json         # TypeScript configuration
+└── package.json          # Dependencies and scripts
+```
+
+## 🚀 Available Commands
+
+```bash
+# Development
+pnpm dev              # Start development server with Turbopack
+pnpm build            # Build for production
+pnpm start            # Start production server
+
+# Code Quality
+pnpm lint             # Run ESLint
+pnpm lint:fix         # Fix ESLint issues automatically
+pnpm format           # Format code with Prettier
+pnpm format:check     # Check code formatting
+
+# Git Workflow
+pnpm commit           # Interactive commit message generator
+pnpm run lint:staged  # Run linters on staged files
+
+# Setup
+pnpm prepare          # Setup Husky git hooks
+```
+
+## 🔄 Git Workflow
+
+1. **Make Changes**: Edit your code
+2. **Stage Files**: `git add .` or use specific files
+3. **Interactive Commit**: `pnpm run commit`
+4. **Automatic Checks**:
+   - Pre-commit: Code formatting and linting
+   - Commit-msg: Conventional commit validation
+5. **Push**: `git push origin main`
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Conventional Commits](https://www.conventionalcommits.org)
+- [Husky Documentation](https://typicode.github.io/husky)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Use the interactive commit: `pnpm run commit`
+5. Push to the branch: `git push origin feature/amazing-feature`
+6. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed information
+3. Follow the conventional commit format for any commits
+
+---
+
+**Built with ❤️ using Next.js, Tailwind CSS, and shadcn/ui**
