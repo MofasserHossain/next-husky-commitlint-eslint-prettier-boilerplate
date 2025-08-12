@@ -2,6 +2,8 @@
 
 A modern, production-ready Next.js boilerplate with a complete development workflow setup including Husky, Commitlint, ESLint, Prettier, and shadcn/ui components.
 
+> **Repository**: [https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate](https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate)
+
 ## ✨ Features
 
 - **🚀 Next.js 15** with App Router and Turbopack
@@ -11,6 +13,16 @@ A modern, production-ready Next.js boilerplate with a complete development workf
 - **🌙 Theme Support** with next-themes
 - **📱 Responsive Design** with mobile-first approach
 - **⚡ Performance** optimized with modern tooling
+
+## 📦 Package Information
+
+**Package Name**: `next-husky-commitlint-eslint-prettier-boilerplate`
+
+**Keywords**: nextjs, boilerplate, husky, commitlint, eslint, prettier, shadcn/ui
+
+**Author**: [Mofasser Hossain](https://github.com/MofasserHossain)
+
+**License**: MIT
 
 ## 🚀 Quick Start
 
@@ -32,6 +44,8 @@ pnpm install
 # Start development server
 pnpm dev
 ```
+
+**Alternative**: You can also use this as a template directly from GitHub by clicking the "Use this template" button on the repository page.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -78,6 +92,15 @@ The interactive commit tool will:
 - Lock file: `pnpm-lock.yaml`
 - Engine requirements specified in `package.json`
 
+### Package Metadata
+
+- **Name**: `next-husky-commitlint-eslint-prettier-boilerplate`
+- **Description**: Comprehensive Next.js boilerplate with development tools
+- **Keywords**: Optimized for discoverability on npm and GitHub
+- **Author**: Mofasser Hossain with GitHub profile link
+- **License**: MIT License
+- **Repository**: Direct links to GitHub repository and homepage
+
 ### Scripts
 
 ```json
@@ -94,6 +117,23 @@ The interactive commit tool will:
   "prepare": "husky"
 }
 ```
+
+## 📚 Dependencies Overview
+
+### Production Dependencies
+
+- **Next.js 15.4.6** with React 19.1.0
+- **shadcn/ui Components**: Radix UI primitives, Lucide React icons
+- **Styling**: Tailwind CSS utilities and merge functions
+- **Theme**: Next-themes for dark/light mode support
+- **Development Tools**: Husky and Lint-staged for workflow automation
+
+### Development Dependencies
+
+- **Code Quality**: ESLint 9, Prettier, TypeScript 5
+- **Commit Standards**: Commitlint with conventional commit rules
+- **Build Tools**: PostCSS, Autoprefixer, Tailwind CSS
+- **Type Safety**: Comprehensive TypeScript types for all packages
 
 ## 🔧 Tool Configurations
 
@@ -242,6 +282,19 @@ npx shadcn@latest add button card dropdown-menu
 pnpm add next-themes
 ```
 
+## 🎯 What's Included
+
+This boilerplate comes with everything you need to start building modern Next.js applications:
+
+- **🚀 Next.js 15** with App Router and Turbopack for fast development
+- **🔧 Complete Development Workflow** with Git hooks and automated tools
+- **🎨 Modern UI Components** with shadcn/ui and Tailwind CSS
+- **🌙 Theme System** with next-themes for dark/light mode
+- **📱 Responsive Design** with mobile-first approach
+- **⚡ Performance Optimized** with modern tooling and best practices
+- **🔒 Type Safety** with comprehensive TypeScript configuration
+- **📝 Code Quality** with ESLint, Prettier, and automated formatting
+
 ## 📁 Project Structure
 
 ```
@@ -270,25 +323,47 @@ next-husky-commitlint-eslint-prettier-boilerplate/
 
 ## 🚀 Available Commands
 
+### Development Commands
+
 ```bash
-# Development
 pnpm dev              # Start development server with Turbopack
 pnpm build            # Build for production
 pnpm start            # Start production server
+```
 
-# Code Quality
+### Code Quality Commands
+
+```bash
 pnpm lint             # Run ESLint
 pnpm lint:fix         # Fix ESLint issues automatically
 pnpm format           # Format code with Prettier
 pnpm format:check     # Check code formatting
+```
 
-# Git Workflow
+### Git Workflow Commands
+
+```bash
 pnpm commit           # Interactive commit message generator
 pnpm run lint:staged  # Run linters on staged files
+```
 
-# Setup
+### Setup Commands
+
+```bash
 pnpm prepare          # Setup Husky git hooks
 ```
+
+## 📋 Package.json Highlights
+
+The `package.json` has been optimized for:
+
+- **📦 Clear Package Identity**: Descriptive name and comprehensive description
+- **🔍 Discoverability**: Strategic keywords for npm and GitHub search
+- **👤 Author Information**: Professional author details with GitHub profile
+- **📄 Licensing**: MIT License for maximum adoption
+- **🔗 Repository Links**: Direct links to source code and homepage
+- **⚙️ Engine Requirements**: Clear Node.js and pnpm version requirements
+- **📚 Dependencies**: Well-organized production and development dependencies
 
 ## 🔄 Git Workflow
 

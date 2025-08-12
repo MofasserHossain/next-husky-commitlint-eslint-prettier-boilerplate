@@ -1,5 +1,53 @@
 {
-  "name": "bright-soft-web",
+  "name": "next-husky-commitlint-eslint-prettier-boilerplate",
+  "description": "A modern, production-ready Next.js 15 boilerplate with a complete development workflow setup. Includes Husky for Git hooks, Commitlint for conventional commits, ESLint for code quality, Prettier for formatting, shadcn/ui for components, Tailwind CSS for styling, and TypeScript for type safety. Perfect for teams and solo developers who want a professional, scalable foundation.",
+  "keywords": [
+    "nextjs",
+    "next.js",
+    "boilerplate",
+    "template",
+    "husky",
+    "commitlint",
+    "eslint",
+    "prettier",
+    "shadcn",
+    "shadcn/ui",
+    "typescript",
+    "tailwindcss",
+    "tailwind",
+    "react",
+    "workflow",
+    "git-hooks",
+    "conventional-commits"
+  ],
+  "author": {
+    "name": "Mofasser Hossain",
+    "url": "https://github.com/MofasserHossain"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate"
+  },
+  "homepage": "https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate",
+  "bugs": {
+    "url": "https://github.com/MofasserHossain/next-husky-commitlint-eslint-prettier-boilerplate/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/MofasserHossain"
+  },
+  "files": [
+    "src/**/*",
+    "public/**/*",
+    "scripts/**/*",
+    ".husky/**/*",
+    "*.config.*",
+    "*.json",
+    "*.md",
+    "*.ts",
+    "*.js"
+  ],
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.14.0",
@@ -50,6 +98,6 @@
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5"
+    "typescript": "^5.4.0"
   }
 }
