@@ -13,11 +13,18 @@ const eslintConfig = [
   ...compat.config({
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
     rules: {
-      quotes: ['error', 'single'],
       'prefer-arrow-callback': ['error'],
       'prefer-const': ['error'],
       'no-var': ['error'],
-      'no-unused-vars': ['error'],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
       'no-unused-expressions': ['error'],
       'no-console': ['error'],
     },
